@@ -81,10 +81,13 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Nav />
 
-      <div className="flex-1 w-full px-12 pt-20 pb-2 flex flex-col gap-3">
+      <div className="flex-1 w-full px-4 md:px-12 pt-20 pb-2 flex flex-col gap-3">
 
         {/* Bio + Photo */}
-        <div className="flex items-start justify-between gap-10">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-10">
+          <div className="w-36 h-36 md:hidden rounded-2xl overflow-hidden bg-stone-100 shrink-0">
+            <img src="/headshot.jpg" alt="Arunima Deval" className="w-full h-full object-cover" />
+          </div>
           <div>
             <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-3 leading-tight">
               About Me
@@ -96,13 +99,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-44 self-stretch rounded-2xl overflow-hidden bg-stone-100 shrink-0 min-h-44">
+          <div className="hidden md:block w-44 self-stretch rounded-2xl overflow-hidden bg-stone-100 shrink-0 min-h-44">
             <img src="/headshot.jpg" alt="Arunima Deval" className="w-full h-full object-cover" />
           </div>
         </div>
 
         {/* Work cards — 3 columns */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {workCards.map((card) =>
             card.noLink ? (
               <div key={card.title}>
@@ -121,7 +124,7 @@ export default function Home() {
         </div>
 
         {/* Research cards — 2×2 */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {researchCards.map((card) => (
             <Link key={card.title + card.bg} href={card.href}>
               <Card {...card} />

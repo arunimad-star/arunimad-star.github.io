@@ -6,7 +6,7 @@ export default function ScreenerPage() {
     <div className="min-h-screen flex flex-col">
       <Nav />
 
-      <main className="flex-1 px-12 pt-24 pb-16">
+      <main className="flex-1 px-4 md:px-12 pt-24 pb-16">
         <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-6">
           Stock Screener
         </h1>

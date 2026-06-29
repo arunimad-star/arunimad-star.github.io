@@ -20,7 +20,7 @@ const links = [
 export function Footer() {
   return (
     <footer className="border-t border-stone-100 mt-8">
-      <div className="px-12 pt-5 pb-2 flex flex-wrap gap-5">
+      <div className="px-4 md:px-12 pt-5 pb-2 flex flex-wrap gap-5">
         {links.map(({ label, href, icon }) => {
           const isEmail = href.startsWith("mailto:");
           return (
@@ -39,7 +39,7 @@ export function Footer() {
           );
         })}
       </div>
-      <div className="px-12 h-10 flex items-center justify-between text-sm text-stone-400 italic">
+      <div className="px-4 md:px-12 h-10 flex items-center justify-between text-sm text-stone-400 italic">
         <span>Arunima Deval</span>
         <span>{new Date().getFullYear()}</span>
       </div>

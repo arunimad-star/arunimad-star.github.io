@@ -71,7 +71,7 @@ export default function ResearchPage() {
     <div className="min-h-screen flex flex-col">
       <Nav />
 
-      <main className="flex-1 px-12 pt-24 pb-16">
+      <main className="flex-1 px-4 md:px-12 pt-24 pb-16">
         <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-10">
           Research Experience
         </h1>
@@ -79,7 +79,7 @@ export default function ResearchPage() {
         <div className="flex flex-col gap-12">
           {entries.map((entry) => (
             <div key={entry.lab}>
-              <div className="flex items-baseline justify-between gap-4 mb-1">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-4 mb-1">
                 <h2 className="text-base font-semibold text-stone-900">{entry.lab}</h2>
                 <span className="text-sm text-stone-400 shrink-0 italic">{entry.period}</span>
               </div>
@@ -87,7 +87,7 @@ export default function ResearchPage() {
               {entry.note && <p className="text-sm text-stone-400 mb-4">{entry.note}</p>}
               {!entry.note && <div className="mb-4" />}
 
-              <div className={entry.projectsLayout === "grid" ? "grid grid-cols-2 gap-4" : "flex flex-col gap-4"}>
+              <div className={entry.projectsLayout === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-4" : "flex flex-col gap-4"}>
                 {entry.projects.map((project) => (
                   <div key={project.title} className="border border-stone-200 rounded-2xl p-6 hover:border-stone-400 hover:shadow-sm transition-all bg-white/60">
                     <h3 className="text-base font-semibold text-stone-900 mb-3">{project.title}</h3>

@@ -105,7 +105,7 @@ export default function PitchesPage() {
     <div className="min-h-screen flex flex-col">
       <Nav />
 
-      <main className="flex-1 px-12 pt-24 pb-16">
+      <main className="flex-1 px-4 md:px-12 pt-24 pb-16">
         <h1 className="text-4xl font-semibold tracking-tight text-stone-900 mb-4">
           Investment Pitches
         </h1>
@@ -115,19 +115,19 @@ export default function PitchesPage() {
 
         <div className="flex flex-col">
           {pitches.map((pitch, i) => (
-            <div key={i} className="flex items-center gap-8 py-8 border-b border-stone-100 last:border-0">
-              <div className="w-28 shrink-0 flex items-center justify-start">
+            <div key={i} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-8 border-b border-stone-100 last:border-0">
+              <div className="w-24 shrink-0 flex items-center justify-start">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={pitch.logo} alt={pitch.company} width={96} height={48} className="max-h-12 max-w-full object-contain" />
               </div>
 
               <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between gap-4 mb-2">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-4 mb-2">
                   <div>
                     <span className="text-base font-semibold text-stone-900">{pitch.company}</span>
                     <span className="text-sm text-stone-400 ml-2">{pitch.exchange}: {pitch.ticker}</span>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex flex-wrap items-center gap-2 shrink-0">
                     <span className="text-sm text-stone-400">{pitch.industry}</span>
                     <span className={`text-sm font-semibold rounded-full px-2.5 py-0.5 ${pitch.type === "Long" ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-red-50 text-red-600 border border-red-200"}`}>
                       {pitch.type}
